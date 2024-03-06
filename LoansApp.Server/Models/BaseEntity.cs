@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace LoansApp.Core.Models
+﻿namespace LoansApp.Core.Models
 {
     public class BaseEntity : IAuditableEntity
     {

@@ -10,9 +10,9 @@ POST {{LoansApp.Server_HostAddress}}/api/customer
 Content-Type: application/json
 
 {
-    "title": "Mrs",
-    "firstName": "first",
-    "secondName": "last",
+    "title": "Mr",
+    "firstName": "firstttt",
+    "lastName": "lastt",
     "address": "123 Wallaby Way",
     "MobileNumber": "555234234",
     "email": "firstlast@mail.com",

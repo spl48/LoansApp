@@ -1,11 +1,6 @@
-﻿// ---------------------------------------
-// Email: quickapp@ebenmonney.com
-// Templates: www.ebenmonney.com/templates
-// (c) 2024 www.ebenmonney.com/mit-license
-// ---------------------------------------
-
-using LoansApp.Server;
+﻿using LoansApp.Server;
 using LoansApp.Server.Models;
+using LoansApp.Server.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace LoansApp.Core.Services
@@ -16,5 +11,20 @@ namespace LoansApp.Core.Services
                 .OrderBy(c => c.FirstName)
                 .ThenBy(c => c.LastName)
                 .ToList();
+
+        public async Task<bool> CreateCustomerAsync(Customer customer)
+        {
+            try
+            {
+                dbContext.Customers.Add(customer);
+                await dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

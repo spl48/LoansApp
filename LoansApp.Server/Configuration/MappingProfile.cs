@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using LoansApp.Server.ViewModels;
-using Microsoft.AspNetCore.Identity;
 
 namespace LoansApp.Server.Configuration
 {

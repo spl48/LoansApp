@@ -1,5 +1,4 @@
-﻿using System.Reflection.Emit;
-using LoansApp.Core.Models;
+﻿using LoansApp.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LoansApp.Server.Models
