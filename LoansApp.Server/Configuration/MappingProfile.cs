@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using LoansApp.Server.Models;
 using LoansApp.Server.ViewModels;
 
 namespace LoansApp.Server.Configuration
@@ -8,6 +9,9 @@ namespace LoansApp.Server.Configuration
         public MappingProfile()
         {
             CreateMap<Customer, CustomerVM>()
+                            .ReverseMap();
+
+            CreateMap<LoanApplication, LoanApplicationVM>()
                             .ReverseMap();
         }
     }

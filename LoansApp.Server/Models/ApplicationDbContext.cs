@@ -6,6 +6,7 @@ namespace LoansApp.Server.Models
     public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<LoanApplication> LoanApplications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -16,14 +17,17 @@ namespace LoansApp.Server.Models
             builder.Entity<Customer>().Property(c => c.Title).IsRequired().HasMaxLength(6);
             builder.Entity<Customer>().Property(c => c.FirstName).IsRequired().HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.LastName).IsRequired().HasMaxLength(100);
-            builder.Entity<Customer>().Property(c => c.Address).HasMaxLength(100);
-            builder.Entity<Customer>().Property(c => c.Email).HasMaxLength(100);
-            builder.Entity<Customer>().Property(c => c.MobileNumber).IsUnicode(false).HasMaxLength(30);
-            builder.Entity<Customer>().Property(c => c.IsHomeOwner).HasColumnType("bit");
-            builder.Entity<Customer>().Property(c => c.AnnualIncome).HasColumnType(priceDecimalType);
+            builder.Entity<Customer>().Property(c => c.Address).IsRequired().HasMaxLength(100);
+            builder.Entity<Customer>().Property(c => c.Email).IsRequired().HasMaxLength(100);
+            builder.Entity<Customer>().Property(c => c.MobileNumber).IsRequired().IsUnicode(false).HasMaxLength(30);
+            builder.Entity<Customer>().Property(c => c.IsHomeOwner).IsRequired().HasColumnType("bit");
+            builder.Entity<Customer>().Property(c => c.AnnualIncome).IsRequired().HasColumnType(priceDecimalType);
+            builder.Entity<Customer>().Property(c => c.CarRegistration).HasMaxLength(20);
             builder.Entity<Customer>().ToTable($"{tablePrefix}{nameof(Customers)}");
 
-
+            builder.Entity<LoanApplication>().Property(a => a.Amount).IsRequired().HasColumnType(priceDecimalType);
+            builder.Entity<LoanApplication>().Property(a => a.ApprovalStatus).HasDefaultValue(ApprovalStatus.InProgress);
+            builder.Entity<LoanApplication>().ToTable($"{tablePrefix}{nameof(LoanApplication)}");
 
         }
 

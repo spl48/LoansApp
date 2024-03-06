@@ -20,3 +20,17 @@ Content-Type: application/json
     "isHomeOwner": true,
     "carRegistration": "543ABC"
 }
+
+### Get all loan applications for given user
+GET {{LoansApp.Server_HostAddress}}/api/loanApplication/1
+Accept: application/json
+###
+
+### Add new loan application to user
+POST {{LoansApp.Server_HostAddress}}/api/loanApplication
+Content-Type: application/json
+
+{
+    "customerId": 1,
+    "amount": 15000.25
+}

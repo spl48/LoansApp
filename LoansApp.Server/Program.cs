@@ -24,6 +24,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<ILoanApplicationService, LoanApplicationService>();
 
 var app = builder.Build();
 

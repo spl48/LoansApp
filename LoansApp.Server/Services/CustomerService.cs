@@ -1,7 +1,5 @@
 ﻿using LoansApp.Server;
 using LoansApp.Server.Models;
-using LoansApp.Server.ViewModels;
-using Microsoft.EntityFrameworkCore;
 
 namespace LoansApp.Core.Services
 {
