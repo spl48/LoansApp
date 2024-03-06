@@ -1,0 +1,22 @@
+@LoansApp.Server_HostAddress = http://localhost:5250
+
+### Get all users
+GET {{LoansApp.Server_HostAddress}}/api/customer
+Accept: application/json
+###
+
+### Register new user
+POST {{LoansApp.Server_HostAddress}}/api/customer
+Content-Type: application/json
+
+{
+    "title": "Mrs",
+    "firstName": "first",
+    "secondName": "last",
+    "address": "123 Wallaby Way",
+    "MobileNumber": "555234234",
+    "email": "firstlast@mail.com",
+    "annualIncome": 55.6,
+    "isHomeOwner": true,
+    "carRegistration": "543ABC"
+}
