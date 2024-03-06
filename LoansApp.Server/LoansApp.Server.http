@@ -32,5 +32,5 @@ Content-Type: application/json
 
 {
     "customerId": 1,
-    "amount": 15000.25
+    "amount": 1000.25
 }

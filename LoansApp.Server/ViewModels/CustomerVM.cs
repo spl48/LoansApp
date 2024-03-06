@@ -12,5 +12,7 @@
         public decimal AnnualIncome { get; set; }
         public bool IsHomeOwner { get; set; }
         public string CarRegistration { get; set; }
+
+        public ICollection<LoanApplicationVM>? LoanApplications { get; set; }
     }
 }
